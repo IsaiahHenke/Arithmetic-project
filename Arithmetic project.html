@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Arithmetic Project</title>	
+</head>
+	<body>
+		<p>Enter a number in each box then choose an operator to use. Click the GO!! button when ready to calculate.</p>
+		
+		<input type="number" id="num1">
+		
+		<select id="operator">
+			<option value="+">+</option>
+			<option value="-">-</option>
+			<option value="*">*</option>
+			<option value="/">/</option>
+		</select>
+		
+		<input type="number" id="num2">
+		
+		<button onclick="calculate()">GO!!</button>
+		
+		<div id="result"></div>
+
+		<script type="text/javascript">
+			function calculate() {
+				// User Inputs
+				var num1 = parseFloat(document.getElementById("num1").value);
+				var num2 = parseFloat(document.getElementById("num2").value);
+				var operator = document.getElementById("operator").value;
+				
+				// Calculations
+				var result;
+				if (operator == "+") {
+					result = num1 + num2;
+				} else if (operator == "-") {
+					result = num1 - num2;
+				} else if (operator == "*") {
+					result = num1 * num2;
+				} else if (operator == "/") {
+					result = num1 / num2;
+				} else {
+					result = "Invalid operator";
+				}
+				
+				// Result
+				document.getElementById("result").innerHTML = result;
+			}
+		</script>
+	</body>
+</html>
